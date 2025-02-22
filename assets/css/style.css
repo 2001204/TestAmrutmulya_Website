@@ -147,8 +147,8 @@ h6 {
   color: #2c7ced;
 }
 
-/**
-* Mobile Navigation 
+/*
+Mobile Navigation 
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -170,6 +170,21 @@ h6 {
 
   .navbar ul {
     display: none;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logo img {
+    width: 40px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .logo sub {
+    font-size: 10px;
   }
 }
 
@@ -531,16 +546,16 @@ section {
   .product-card {
     width: 100px;
     height: 100px;
-    transform: scale(1.1);
+    transform: scale(1); /* Remove initial zoom on mobile */
     margin-bottom: 20px; /* Space between vertical cards */
   }
 
   .product-card img {
-    transform: scale(1.1); 
+    transform: none; /* Disable zoom on hover for mobile */
   }
 
   .product-card:hover img {
-    transform: scale(1.1);
+    transform: none; /* No zoom on hover for mobile */
     opacity: 0.7; /* Slight transparency on hover */
   }
 
@@ -581,6 +596,13 @@ section {
   padding: 0;
 }
 
+.about p {
+  text-align: center;
+  color: #2b4a5a;
+}
+
+
+
 .about .content ul li {
   padding-left: 28px;
   position: relative;
@@ -602,9 +624,6 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
-
-
-
 
 /* Image Styling to Match Text Height */
 .about .content img {
