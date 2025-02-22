@@ -307,11 +307,25 @@ a, .btn-get-started, .navbar .getstarted, .section-title h2::after {
   background: #FF8C00;
 }
 
+/* Hero Animation */
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
 
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Adjustments */
 @media (max-width: 991px) {
   #hero {
-    height: 100vh;
-    text-align: center;
+    height: auto;
+    padding: 60px 20px;
   }
 
   #hero .animated {
@@ -323,45 +337,43 @@ a, .btn-get-started, .navbar .getstarted, .section-title h2::after {
   }
 
   #hero .hero-img img {
-    width: 50%;
+    width: 60%;
   }
 }
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 32px;
+    line-height: 40px;
   }
 
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   #hero .hero-img img {
-    width: 70%;
+    width: 75%;
   }
 }
 
 @media (max-width: 575px) {
   #hero .hero-img img {
-    width: 80%;
+    width: 85%;
   }
 
   #hero .btn-get-started {
     font-size: 16px;
-    padding: 10px 24px 11px 24px;
-  }
-}
-
-@keyframes up-down {
-  0% {
-    transform: translateY(10px);
+    padding: 10px 24px;
   }
 
-  100% {
-    transform: translateY(-10px);
+  #hero h1 {
+    font-size: 24px;
+  }
+
+  #hero h2 {
+    font-size: 16px;
   }
 }
 
@@ -514,16 +526,35 @@ section {
   opacity: 1; /* Show product name */
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .product-card {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
+    transform: scale(1.1);
+    margin-bottom: 20px; /* Space between vertical cards */
+  }
+
+  .product-card img {
+    transform: scale(1.1); 
+  }
+
+  .product-card:hover img {
+    transform: scale(1.1);
+    opacity: 0.7; /* Slight transparency on hover */
   }
 
   .product-overlay {
     font-size: 12px;
+    opacity: 1; /* Always visible on mobile */
+    background-color: rgba(0, 0, 0, 0.5); /* Lighter overlay */
+  }
+
+  .product-card:hover .product-overlay {
+    opacity: 1;
   }
 }
+
 
 
 /*---
