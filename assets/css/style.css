@@ -551,18 +551,12 @@ section {
   }
 
   .product-card img {
-    transform: none; /* Disable zoom on hover for mobile */
+    transform: scale(1.2); /* Disable zoom on hover for mobile */
   }
 
   .product-card:hover img {
-    transform: none; /* No zoom on hover for mobile */
+    transform: scale(1.2); /* No zoom on hover for mobile */
     opacity: 0.7; /* Slight transparency on hover */
-  }
-
-  .product-overlay {
-    font-size: 12px;
-    opacity: 1; /* Always visible on mobile */
-    background-color: rgba(0, 0, 0, 0.5); /* Lighter overlay */
   }
 
   .product-card:hover .product-overlay {
