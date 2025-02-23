@@ -500,12 +500,16 @@ section {
     margin-bottom: 20px; /* Space between vertical cards */
   }
 
+  .product-card:hover .product-overlay {
+    opacity: 1; /* Show product name */
+  }
+
   .product-card img {
-    transform: scale(1.2); /* Disable zoom on hover for mobile */
+    transform: scale(1); /* Disable zoom on hover for mobile */
   }
 
   .product-card:hover img {
-    transform: scale(1.2); /* No zoom on hover for mobile */
+    transform: scale(1); /* No zoom on hover for mobile */
     opacity: 0.7; /* Slight transparency on hover */
   }
 
@@ -787,6 +791,14 @@ section {
 .benefits img:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .benefits #img {
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 /*-- Services Section --*/
@@ -1097,6 +1109,13 @@ section {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact .info {
+    margin-bottom: 10px; /* Space between vertical cards */
   }
 }
 
