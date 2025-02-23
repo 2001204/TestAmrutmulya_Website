@@ -337,7 +337,16 @@ a, .btn-get-started, .navbar .getstarted, .section-title h2::after {
   }
 
   #hero .animated {
-    animation: none;
+    animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(12px);
+    }
+    100% {
+      transform: translateY(-12px);
+    }
   }
 
   #hero .hero-img {
