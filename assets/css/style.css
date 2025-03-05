@@ -327,6 +327,31 @@ a, .btn-get-started, .navbar .getstarted, .section-title h2::after {
 .btn-get-started:hover, .navbar .getstarted:hover, .portfolio #portfolio-flters li.filter-active {
   background: #0bc762;
 }
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  15% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(5deg); }
+  60% { transform: rotate(-5deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0); }
+}
+
+.whatsapp-icon {
+  display: inline-block;
+  font-size: 1.3em;
+  animation: ring 1.5s infinite ease-in-out;
+  color: #ffffff; /* WhatsApp green color */
+}
+
+@media (max-width: 768px) {
+  .btn-get-started, .btn-get-started1 {
+    width: 100%; /* Make buttons take more width on small screens */
+    text-align: center;
+  }
+}
+
 /* Hero Animation */
 #hero .animated {
   animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
@@ -334,10 +359,10 @@ a, .btn-get-started, .navbar .getstarted, .section-title h2::after {
 
 @keyframes up-down {
   0% {
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   100% {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
 }
 
@@ -355,10 +380,10 @@ a, .btn-get-started, .navbar .getstarted, .section-title h2::after {
 
   @keyframes up-down {
     0% {
-      transform: translateY(12px);
+      transform: translateY(10px);
     }
     100% {
-      transform: translateY(-12px);
+      transform: translateY(-10px);
     }
   }
 
