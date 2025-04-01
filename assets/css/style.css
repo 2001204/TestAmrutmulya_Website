@@ -1245,6 +1245,11 @@ DistributerShip
   background: #fff;
 }
 
+.copyright {
+  text-align: center;
+  width: 100%;
+}
+
 #footer .footer-top .footer-contact {
   margin-bottom: 20px;
 }
