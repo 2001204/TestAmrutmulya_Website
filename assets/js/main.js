@@ -263,4 +263,49 @@
     });
   });
 
+  let ytPlayers = [];
+
+  function onYouTubeIframeAPIReady() {
+    const iframes = document.querySelectorAll('iframe[src*="youtube.com/embed"]');
+
+    iframes.forEach((iframe, index) => {
+      ytPlayers[index] = new YT.Player(iframe, {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    });
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+      // Pause all other YouTube players
+      ytPlayers.forEach(player => {
+        if (player !== event.target) {
+          player.pauseVideo();
+        }
+      });
+
+      // Pause all HTML5 videos
+      document.querySelectorAll('.custom-video').forEach(video => {
+        video.pause();
+      });
+    }
+  }
+
+  // Pause YouTube videos when local video plays
+  document.addEventListener('play', function (e) {
+    if (e.target.tagName === 'VIDEO') {
+      // Pause all other HTML5 videos
+      document.querySelectorAll('.custom-video').forEach(video => {
+        if (video !== e.target) {
+          video.pause();
+        }
+      });
+
+      // Pause YouTube videos
+      ytPlayers.forEach(player => player.pauseVideo());
+    }
+  }, true);
+
 })()
